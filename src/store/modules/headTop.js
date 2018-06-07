@@ -7,10 +7,12 @@ export default {
         headerTop:{
             topNav:[],
             bannerData:[],
+            bannerData1:[],
             newData:[],
             newActivity:[],
             oldActivity:[],
-            Activitying:[]
+            Activitying:[],
+            PreviousAct:[]
         }
     },
     getters:{
@@ -20,8 +22,8 @@ export default {
         newActivity:state=>state.headerTop.newActivity,
         oldActivity:state=>state.headerTop.oldActivity,
         Activitying:state=>state.headerTop.Activitying,
-        
-        
+        bannerData1:state=>state.headerTop.bannerData1,
+        PreviousAct:state=>state.headerTop.PreviousAct,
         
     },
     mutations:{
@@ -32,7 +34,9 @@ export default {
             state.headerTop.newActivity = headerTop.newActivity   
             state.headerTop.oldActivity = headerTop.oldActivity
             state.headerTop.Activitying = headerTop.Activitying            
-                        
+            state.headerTop.bannerData1 = headerTop.bannerData1
+            state.headerTop.PreviousAct = headerTop.PreviousAct                  
+                              
         }
     },
     actions:{

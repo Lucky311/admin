@@ -49,7 +49,7 @@ export default {
     height: 590px;
 }
 .swiper-slide {
-  background-size: 100%;
+  background-size: cover;
 }
 .gallery-top {
   height: 590px;

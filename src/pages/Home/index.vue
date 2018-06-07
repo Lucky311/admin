@@ -98,7 +98,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .layout {
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  position: relative;
 }
 .topnav {
   height: 56px;

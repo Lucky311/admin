@@ -7,7 +7,13 @@
       <div class="activity-tit">
         <h1>活动列表</h1>
       </div>
-      
+      <div class="old-year">
+        <swiper :options="swiperOption">
+          <swiper-slide v-for="(el,index) in PreviousAct" :id="el.title" :key="index">{{el.title}}</swiper-slide>
+        </swiper>
+        <div class="swiper-button-next" slot="button-next"></div>
+        <div class="swiper-button-prev" slot="button-prev"></div>
+      </div>
       <OldActivity />
       <Page :total="pageTotal" :page-size="pageSize" show-elevator show-total :styles="styles" :prev-text="pagePre"></Page>
     </div>
@@ -35,7 +41,19 @@ export default {
       styles:{
         "background":""
       },
-      pagePre:"上一页" 
+      pagePre:"上一页",
+      swiperOption:{
+        slidesPerView: 6,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+      on:{
+        click: function(event){
+          console.log(event.target.id);
+        },
+      },
+      }
     }
   },
   components: {
@@ -46,7 +64,7 @@ export default {
     OldActivity
   },
   computed: {
-    ...mapGetters(["newData"])
+    ...mapGetters(["PreviousAct"])
   },
   methods: {
     ...mapActions(["getHeaderData"]),
@@ -60,7 +78,44 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* content */ 
+  .old-year{
+    clear: both;
+    width: 1102px;
+    margin: 0 auto;
+    position: relative;
+    border: 1px solid #5745c0;
+    margin-bottom: 20px;
+  }
+  .swiper-container {
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    width: 1010px;
+    
+    /* border: 1px solid #5745c0 */
+  }
+  .swiper-slide{
+    border-right: 1px solid #5745c0
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    top:22px;
+    width: 46px;
+    height: 46px;
+    border-right: 1px solid #5745c0
+    /* background: #7a81df; */
+
+  }
+    .swiper-button-next {
+    
+    right: 0;
+    background: #7a81df url(/static/images/old-right.png) no-repeat center;
+  }
+  .swiper-button-prev {
+    left:0;
+    border-right: 1px solid #5745c0;
+    background: #7a81df url(/static/images/old-left.png) no-repeat center;
+  }
 .activity-list{
   width: 1180px;
   margin: 0 auto;

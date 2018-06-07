@@ -1,7 +1,7 @@
 <template>
   <div class="position-nav">
     <div class="max-width">
-      <router-link to="/" active-class="nav-active">首页</router-link>
+      <router-link to="/" active-class="nav-active" exact>首页</router-link>
       <router-link to="/activitying" active-class="nav-active">正在进行</router-link>
       <router-link to="/advanceact" active-class="nav-active">活动预告</router-link>
       <router-link to="/previousact" active-class="nav-active">往期活动</router-link>
@@ -55,6 +55,9 @@ export default {
     float: left;
     color: #fff;
     padding: 0 25px;
+  }
+  .position-nav a:hover{
+    background: #5847c1
   }
   /* top导航 */
   .max-width {

@@ -39,6 +39,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .new-activity{
   width: 1180px;
   height: 300px;
